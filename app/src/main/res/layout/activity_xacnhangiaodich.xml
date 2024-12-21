@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdminActivity.Xacnhangiaodich">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFEB3B">
+
+        <TextView
+            android:id="@+id/tvexitgiaodich"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="←"
+            android:textColor="#0F0E0E"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtviewxacnhangiaodich"
+            android:layout_width="273dp"
+            android:layout_height="85dp"
+            android:background="#FFEB3B"
+            android:gravity="center"
+            android:text="Giao dịch"
+            android:textColor="#070707"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchgiaodich"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/customedtext"
+        app:queryHint="Search Here" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclegiaodich"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

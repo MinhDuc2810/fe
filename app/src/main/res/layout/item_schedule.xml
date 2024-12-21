@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+
+    android:background="@drawable/custome_frame1"
+    >
+
+
+    <TextView
+        android:id="@+id/scheduleptname"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:text="Tên PT"
+        android:textColor="#0B0B0B"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+
+
+    <TextView
+        android:id="@+id/scheduleptphoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:text="Số điện thoại"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/scheduleptdate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:text="ngày"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/schedulepttime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:text="Thời gian"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnhuylichtap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:backgroundTint="#F44336"
+        android:text="Huỷ lịch "
+        android:textColor="#0B0B0B" />
+
+
+</LinearLayout>
+

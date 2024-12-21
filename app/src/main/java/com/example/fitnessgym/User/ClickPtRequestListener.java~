@@ -1,0 +1,2 @@
+package com.example.fitnessgym.User;public interface ClickPtRequestListener {
+}

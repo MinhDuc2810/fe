@@ -1,0 +1,4 @@
+package com.example.fitnessgym.PtActivity;
+
+public interface ClickRequestListener {
+}

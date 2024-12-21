@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+
+    android:background="@drawable/custome_frame1"
+    >
+
+
+
+
+
+    <TextView
+        android:id="@+id/nameptrequest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:text="Tên PT"
+        android:layout_weight="1"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/emailptrequest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:text="email"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/phonenumberptrequest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:text="Số điện thoai"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/sessionLeft"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:text="Số buổi còn lại"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp" />
+
+
+
+</LinearLayout>
+

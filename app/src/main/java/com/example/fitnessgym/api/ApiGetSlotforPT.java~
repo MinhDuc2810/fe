@@ -1,0 +1,29 @@
+package com.example.fitnessgym.api;
+
+import com.example.fitnessgym.Sessions;
+
+public class ApiGetSlotforPT {
+    String status;
+    Sessions sessions;
+
+    public ApiGetSlotforPT(String status, Sessions sessions) {
+        this.status = status;
+        this.sessions = sessions;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Sessions getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(Sessions sessions) {
+        this.sessions = sessions;
+    }
+}

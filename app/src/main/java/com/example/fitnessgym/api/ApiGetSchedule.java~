@@ -1,0 +1,11 @@
+package com.example.fitnessgym.api;
+
+import com.example.fitnessgym.Schedule;
+
+public class ApiGetSchedule {
+    String status;
+    Schedule schedule;
+
+
+
+}

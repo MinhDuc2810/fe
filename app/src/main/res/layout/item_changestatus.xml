@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+
+    android:background="@drawable/customechange"
+    >
+
+
+    <TextView
+        android:id="@+id/changeusername"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:text="Tên khách"
+        android:textColor="#0B0B0B"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/changeuserid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:text="mã người dùng"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/changephoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:text="Số điện thoại"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/changedate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:text="ngày"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/changetime"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:text="Thời gian"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnacceptchange"
+            android:layout_width="78dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_toStartOf="@+id/btnrejectchange"
+            android:backgroundTint="#8BC34A"
+            android:text="Accept"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnrejectchange"
+            android:layout_width="75dp"
+            android:layout_height="36dp"
+            android:backgroundTint="#F44336"
+            android:text="Reject"
+
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+</LinearLayout>
+

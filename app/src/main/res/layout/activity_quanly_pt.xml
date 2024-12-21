@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdminActivity.Quanlythetap">
+
+    <TextView
+        android:id="@+id/txtviewqlytt"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:background="#FFEB3B"
+        android:gravity="center"
+        android:text="Quản lý PT"
+        android:textColor="#070707"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchpt"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/customedtext"
+        app:queryHint="Search Here" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclept"
+        android:layout_width="match_parent"
+        android:layout_height="400dp" />
+
+    <Button
+        android:id="@+id/btngotothempt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#FFEB3B"
+        android:text="Thêm PT"
+        android:textStyle="bold" />
+
+</LinearLayout>

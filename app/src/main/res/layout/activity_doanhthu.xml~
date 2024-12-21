@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdminActivity.DoanhthuActivity">
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="match_parent"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:background="#FFEB3B"
+        android:layout_height="63dp"
+        android:text="Doanh thu" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="233dp"
+
+                android:layout_margin="20sp"
+                android:background="@drawable/custome_frame1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView36"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center"
+                    android:text="Thống kê theo PT"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtmonthpt"
+                    android:layout_width="153dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nhập tháng"
+                    android:inputType="text"
+                    android:paddingLeft="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edtyearpt"
+                        android:layout_width="154dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Nhập năm"
+                        android:inputType="text"
+                        android:paddingLeft="10dp" />
+
+                    <Button
+                        android:id="@+id/btntotalpt"
+                        android:layout_width="132dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#FFEB3B"
+                        android:text="Xác nhận"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="138dp"
+                    android:layout_height="33dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/customedtext"
+                     />
+
+                <TextView
+                    android:id="@+id/totalpt"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:gravity="center"
+
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                     />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="246dp"
+                android:layout_margin="20sp"
+                android:background="@drawable/custome_frame1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView39"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:gravity="center"
+                    android:text="Thống kê theo ngày"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtmonthday"
+                    android:layout_width="153dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nhập tháng"
+                    android:inputType="text"
+                    android:paddingLeft="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edtyearday"
+                        android:layout_width="154dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Nhập năm"
+                        android:inputType="text"
+                        android:paddingLeft="10dp" />
+
+                    <Button
+                        android:id="@+id/btntotalday"
+                        android:layout_width="132dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#FFEB3B"
+                        android:text="Xác nhận"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edtday"
+                    android:layout_width="154dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nhập ngày"
+                    android:inputType="text"
+                    android:paddingLeft="10dp" />
+
+
+                <TextView
+                    android:id="@+id/totalday"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="246dp"
+                android:layout_margin="20sp"
+                android:background="@drawable/custome_frame1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView38"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:gravity="center"
+                    android:text="Thống kê theo tháng"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtmonthall"
+                    android:layout_width="153dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nhập tháng"
+                    android:inputType="text"
+                    android:paddingLeft="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="78dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edtyearall"
+                        android:layout_width="154dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Nhập năm"
+                        android:inputType="text"
+                        android:paddingLeft="10dp" />
+
+                    <Button
+                        android:id="@+id/btntotalall"
+                        android:layout_width="132dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#FFEB3B"
+                        android:text="Xác nhận"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+
+
+                <TextView
+                    android:id="@+id/totalall"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

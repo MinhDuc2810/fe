@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:background="@drawable/custome_frame1"
+    >
+
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Tên người dùng"
+        android:textColor="#0B0B0B"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/userid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Mã khách hàng"
+        android:textColor="#0B0B0B"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/transactionid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Mã giao dịch"
+        android:textColor="#0B0B0B"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/packageid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Mã gói tập"
+        android:textColor="#0B0B0B"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Trạng thái : Chờ duyệt"
+        android:textColor="#0B0B0B"
+        android:textSize="14sp" />
+</LinearLayout>

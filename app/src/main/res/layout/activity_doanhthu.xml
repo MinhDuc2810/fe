@@ -64,28 +64,25 @@
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/edtmonthpt"
-                    android:layout_width="153dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Nhập tháng"
-                    android:inputType="text"
-                    android:paddingLeft="10dp" />
+                <Spinner
+                    android:id="@+id/spinner_month"
+                    android:layout_width="138dp"
+                    android:layout_height="33dp"
+                    android:layout_marginStart="10dp"
+
+                    android:background="@drawable/customedtext" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="59dp"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/edtyearpt"
-                        android:layout_width="154dp"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Nhập năm"
-                        android:inputType="text"
-                        android:paddingLeft="10dp" />
+                    <Spinner
+                        android:id="@+id/spinner_year"
+                        android:layout_width="138dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/customedtext" />
 
                     <Button
                         android:id="@+id/btntotalpt"
@@ -93,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
                         android:layout_marginEnd="30dp"
-                        android:layout_weight="1"
+
                         android:backgroundTint="#FFEB3B"
                         android:text="Xác nhận"
                         android:textStyle="bold" />
@@ -131,43 +128,47 @@
                 <TextView
                     android:id="@+id/textView39"
                     android:layout_width="match_parent"
-                    android:layout_height="65dp"
+                    android:layout_height="63dp"
                     android:gravity="center"
                     android:text="Thống kê theo ngày"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/edtmonthday"
-                    android:layout_width="153dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Nhập tháng"
-                    android:inputType="text"
-                    android:paddingLeft="10dp" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="89dp"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/edtyearday"
-                        android:layout_width="154dp"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Nhập năm"
-                        android:inputType="text"
-                        android:paddingLeft="10dp" />
+                    <TextView
+                        android:id="@+id/tv_selected_date"
+                        android:layout_width="134sp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/customedtext"
+                        android:gravity="center"
+                        android:paddingLeft="5sp"
+
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/btn_pick_date"
+                        android:layout_width="30sp"
+                        android:layout_height="30sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        app:srcCompat="@drawable/calendar" />
 
                     <Button
                         android:id="@+id/btntotalday"
-                        android:layout_width="132dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
                         android:layout_marginEnd="30dp"
-                        android:layout_weight="1"
+
                         android:backgroundTint="#FFEB3B"
                         android:text="Xác nhận"
                         android:textStyle="bold" />
@@ -175,24 +176,14 @@
 
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/edtday"
-                    android:layout_width="154dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Nhập ngày"
-                    android:inputType="text"
-                    android:paddingLeft="10dp" />
-
 
                 <TextView
                     android:id="@+id/totalday"
                     android:layout_width="match_parent"
-                    android:layout_height="44dp"
+                    android:layout_height="39dp"
                     android:gravity="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
-                    />
+                    android:textSize="20dp" />
 
             </LinearLayout>
 
@@ -213,28 +204,26 @@
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/edtmonthall"
-                    android:layout_width="153dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Nhập tháng"
-                    android:inputType="text"
-                    android:paddingLeft="10dp" />
+                <Spinner
+                    android:id="@+id/spinner_month1"
+                    android:layout_width="139dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/customedtext" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="78dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
 
-                    <EditText
-                        android:id="@+id/edtyearall"
-                        android:layout_width="154dp"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Nhập năm"
-                        android:inputType="text"
-                        android:paddingLeft="10dp" />
+                    <Spinner
+                        android:id="@+id/spinner_year1"
+                        android:layout_width="138dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/customedtext" />
 
                     <Button
                         android:id="@+id/btntotalall"
@@ -242,7 +231,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
                         android:layout_marginEnd="30dp"
-                        android:layout_weight="1"
                         android:backgroundTint="#FFEB3B"
                         android:text="Xác nhận"
                         android:textStyle="bold" />

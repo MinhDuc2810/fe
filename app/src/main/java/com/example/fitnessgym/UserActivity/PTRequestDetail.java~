@@ -79,10 +79,14 @@ public class PTRequestDetail extends AppCompatActivity {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                // Định dạng ngày thành YYYY-MM-DD
-                String formattedMonth = String.format("%02d", month + 1);
+                // Đảm bảo tháng và ngày luôn có 2 chữ số
+                String formattedMonth = String.format("%02d", month + 1); // Tháng cần +1 vì tháng bắt đầu từ 0
                 String formattedDay = String.format("%02d", dayOfMonth);
-                selectedDate = year + "-" + formattedMonth + "-" + formattedDay;
+
+                // Lấy giá trị ngày/tháng/năm với định dạng YYYY-MM-DD
+                String selectedDate = year + "-" + formattedMonth + "-" + formattedDay;
+
+                sentRequest(selectedDate);
             }
         });
 

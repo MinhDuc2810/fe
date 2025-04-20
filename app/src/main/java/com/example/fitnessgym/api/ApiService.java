@@ -25,6 +25,8 @@ import com.example.fitnessgym.User.Ptinfo;
 import com.example.fitnessgym.User.RegisterRequest;
 import com.example.fitnessgym.User.Userinfo;
 import com.example.fitnessgym.User.Userupdate;
+import com.example.fitnessgym.VNPAY.PaymentResponse;
+import com.example.fitnessgym.VNPAY.PaymentVnpayRequest;
 
 import java.util.List;
 
@@ -185,6 +187,7 @@ public interface ApiService {
 
     @PUT("ptRequest/changeStatusPtRequest.php")
     Call<ApiResponse> cancelSchedule(@Body Response response);
+
 
 
 

@@ -2,6 +2,7 @@ package com.example.fitnessgym.Package;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,8 @@ import com.example.fitnessgym.R;
 import com.example.fitnessgym.Token.SharedPreferencesManager;
 import com.example.fitnessgym.User.Userinfo;
 import com.example.fitnessgym.UserActivity.MainActivity;
+import com.example.fitnessgym.VNPAY.PaymentResponse;
+import com.example.fitnessgym.VNPAY.PaymentVnpayRequest;
 import com.example.fitnessgym.api.ApiResponse;
 import com.example.fitnessgym.api.ApiService;
 import com.example.fitnessgym.retrofit.RetrofitClient;
@@ -37,7 +40,11 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class PackageDetail extends AppCompatActivity {
-    Button btnthanhtoan, btnexit;
+    Button btnthanhtoan, btnexit, btnvnpay;
+    private static final String VNP_TMN_CODE = "A1AUKDWF"; // TmnCode của bạn
+    private static final String VNP_HASH_SECRET = "IHRW9W42U3BRD1JM3PSLCU4G5MTCOZJ2"; // Hash Secret của bạn
+    private static final String VNP_RETURN_URL = "http://localhost:3000/backend/vnpay/handle_return.php"; // Return URL
+    private static final String BASE_URL = "http://192.168.1.9:80/api/backend/";
 
 
     @Override
@@ -50,6 +57,7 @@ public class PackageDetail extends AppCompatActivity {
 
         // Nhận dữ liệu package đã truyền từ MainActivity
         Package packageItem = (Package) getIntent().getSerializableExtra("package_details");
+
 
 
 
@@ -82,6 +90,14 @@ public class PackageDetail extends AppCompatActivity {
 
         }
 
+        btnvnpay = findViewById(R.id.btnvnpay);
+        btnvnpay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                initiatePayment();
+            }
+        });
+
         btnexit = findViewById(R.id.btnexitpackagedetail);
         btnexit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +107,19 @@ public class PackageDetail extends AppCompatActivity {
             }
         });
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private void paymentrequest() {
         Package packageItem = (Package) getIntent().getSerializableExtra("package_details");

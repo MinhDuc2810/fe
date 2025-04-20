@@ -146,6 +146,7 @@ public class Loginactivities extends AppCompatActivity {
             firstAttemptTime = currentTime;
             failedLoginAttempts = 0;
         }
+                        
 
         failedLoginAttempts++;
 

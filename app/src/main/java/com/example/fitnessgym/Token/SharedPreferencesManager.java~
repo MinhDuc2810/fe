@@ -16,7 +16,7 @@ public class SharedPreferencesManager {
         // Tạo MasterKey để mã hóa dữ liệu
         MasterKey masterKey = new MasterKey.Builder(context)
                 .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
-                .build(); 
+                .build();
 
         // Khởi tạo EncryptedSharedPreferences
         return (EncryptedSharedPreferences) EncryptedSharedPreferences.create(

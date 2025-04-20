@@ -1,0 +1,133 @@
+package com.example.fitnessgym;
+
+public class VNPayPayment {
+
+    private static final String TAG = "VNPayPayment";
+    private static final String VNPAY_URL = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html"; // VNPay sandbox URL
+    private static final String VNPAY_SECRET = "IHRW9W42U3BRD1JM3PSLCU4G5MTCOZJ2"; // Replace with your VNPay Hash Secret
+    private static final String VNPAY_TMN_CODE = "A1AUKDWF"; // Replace with your TmnCode
+    private static final String RETURN_URL = "http://your-frontend-return-url.com"; // Replace with your actual return URL
+
+    public void initiatePayment(long amount, String orderId) {
+        new VNPayTask().execute(String.valueOf(amount), orderId);
+    }
+
+    private class VNPayTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String amount = params[0];
+            String orderId = params[1];
+
+            Map<String, String> vnpParams = new HashMap<>();
+            vnpParams.put("vnp_Version", "2.1.0");
+            vnpParams.put("vnp_TmnCode", VNPAY_TMN_CODE);
+            vnpParams.put("vnp_Amount", String.valueOf(Long.parseLong(amount) * 100)); // VNPay expects amount in VND (multiply by 100)
+            vnpParams.put("vnp_Command", "pay");
+            vnpParams.put("vnp_CreateDate", String.valueOf(System.currentTimeMillis()));
+            vnpParams.put("vnp_CurrCode", "VND");
+            vnpParams.put("vnp_IpAddr", "YOUR_DEVICE_IP"); // Replace with actual device IP
+            vnpParams.put("vnp_Locale", "vn");
+            vnpParams.put("vnp_OrderInfo", "Payment for order " + orderId);
+            vnpParams.put("vnp_OrderType", "billpayment");
+            vnpParams.put("vnp_ReturnUrl", RETURN_URL);
+            vnpParams.put("vnp_TxnRef", orderId);
+            vnpParams.put("vnp_ExpireDate", String.valueOf(System.currentTimeMillis() + 15 * 60 * 1000)); // 15 minutes expiration
+
+            String query = getQueryString(vnpParams);
+            String secureHash = generateSecureHash(query);
+
+            vnpParams.put("vnp_SecureHash", secureHash);
+
+            try {
+                URL url = new URL(VNPAY_URL + "?" + query);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("POST");
+                connection.setDoOutput(true);
+                OutputStream os = connection.getOutputStream();
+                os.write(query.getBytes("UTF-8"));
+                os.flush();
+                os.close();
+
+                int responseCode = connection.getResponseCode();
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    String inputLine;
+                    StringBuilder response = new StringBuilder();
+                    while ((inputLine = in.readLine()) != null) {
+                        response.append(inputLine);
+                    }
+                    in.close();
+                    return response.toString();
+                } else {
+                    Log.e(TAG, "Payment request failed with response code: " + responseCode);
+                    return null;
+                }
+            } catch (Exception e) {
+                Log.e(TAG, "Error while making VNPay request", e);
+                return null;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String response) {
+            if (response != null) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    if (jsonResponse.has("paymentUrl")) {
+                        String paymentUrl = jsonResponse.getString("paymentUrl");
+                        Intent intent = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse(paymentUrl));
+                        startActivity(intent); // Open payment page
+                    } else {
+                        Log.e(TAG, "Payment URL not found in response.");
+                    }
+                } catch (Exception e) {
+                    Log.e(TAG, "Error parsing VNPay response", e);
+                }
+            } else {
+                Log.e(TAG, "Failed to get response from VNPay.");
+            }
+        }
+
+        private String getQueryString(Map<String, String> params) {
+            StringBuilder result = new StringBuilder();
+            for (Map.Entry<String, String> entry : params.entrySet()) {
+                if (result.length() > 0) result.append("&");
+                try {
+                    result.append(android.net.Uri.encode(entry.getKey(), "UTF-8"));
+                    result.append("=");
+                    result.append(android.net.Uri.encode(entry.getValue(), "UTF-8"));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            return result.toString();
+        }
+
+        private String generateSecureHash(String query) {
+            try {
+                String hashData = query;
+                return hashHmacSHA512(hashData, VNPAY_SECRET);
+            } catch (Exception e) {
+                Log.e(TAG, "Error while generating secure hash", e);
+                return null;
+            }
+        }
+
+        private String hashHmacSHA512(String data, String key) throws Exception {
+            java.security.Signature signature = java.security.Signature.getInstance("HmacSHA512");
+            java.security.spec.SecretKeySpec secretKeySpec = new java.security.spec.SecretKeySpec(key.getBytes("UTF-8"), "HmacSHA512");
+            signature.initSign(secretKeySpec);
+            signature.update(data.getBytes("UTF-8"));
+            return byteArrayToHex(signature.sign());
+        }
+
+        private String byteArrayToHex(byte[] bytes) {
+            StringBuilder result = new StringBuilder();
+            for (byte b : bytes) {
+                result.append(String.format("%02x", b));
+            }
+            return result.toString();
+        }
+    }
+}

@@ -14,7 +14,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 public class RetrofitClient {
 
     private static Retrofit retrofit = null;
-    private static final String BASE_URL = "http://172.19.201.62:80/api/backend/";
+    private static final String BASE_URL = "http://192.168.39.130:80/api/backend/";
     private static Context appContext;
 
     public static void init(Context context) {

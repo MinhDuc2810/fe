@@ -70,13 +70,13 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btnzalopay"
+            android:id="@+id/btnvnpay"
             android:layout_width="match_parent"
             android:layout_height="79dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:backgroundTint="#03A9F4"
-            android:text="Zalopay"
+            android:text="VNpay"
             android:textStyle="bold" />
 
 
